@@ -1,0 +1,276 @@
+.component1,
+.component2,
+.component3,
+.component4,
+.component5 {
+	z-index: 1;
+	background: #fff;
+	position: relative;
+}
+
+.component1 {
+	margin-top: 8rem;
+	background: #fff;
+
+	&.hide * {
+		opacity: 0;
+	}
+
+	&__heading {
+		color: $blue-color-1;
+		font-size: 5rem;
+		font-weight: 600;
+		line-height: 1.1em;
+	}
+
+	&__subheading {
+		color: $blue-color-1;
+		font-size: 2.4rem;
+		margin: 3rem 0;
+	}
+
+	&__separator {
+		width: 100%;
+		height: 2px;
+		transform-origin: center;
+
+		&-main {
+			width: 80%;
+			height: 100%;
+			display: block;
+			background: $yellow-color-1;
+		}
+	}
+
+	&__description {
+		display: block;
+		margin-top: 3rem;
+		padding-right: 2rem;
+		font-size: 1.7rem;
+		line-height: 1.8;
+		color: $gray-color-1;
+		text-align: justify;
+	}
+
+	&__cards-container {
+		display: flex;
+		justify-content: space-around;
+		padding-left: 5rem;
+	}
+}
+
+.component2 {
+	margin-top: 8rem;
+	background: #fff;
+
+	&.hide * {
+		opacity: 0;
+	}
+
+	&__images-container {
+		padding-left: 8rem;
+		position: relative;
+		min-height: 100vh;
+
+		> * {
+			position: absolute;
+		}
+	}
+
+	&__image-container {
+		will-change: transform;
+		transition: all 1s;
+
+		&::after {
+			position: absolute;
+			content: "";
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #fff;
+			transform: scaleY(0);
+			transform-origin: bottom;
+		}
+
+		&--1 {
+			img {
+				width: 31.9rem;
+				height: 47.8rem;
+				object-fit: cover;
+			}
+		}
+
+		&--2 {
+			top: 15rem;
+			left: 35rem;
+			img {
+				width: 43rem;
+				height: 43rem;
+				object-fit: cover;
+			}
+		}
+
+		&--3 {
+			top: 35rem;
+			left: 15rem;
+
+			img {
+				width: 29rem;
+				height: 29rem;
+				object-fit: cover;
+			}
+		}
+	}
+
+	&__content-container {
+		padding: 8rem;
+		padding-left: 10rem;
+	}
+
+	&__heading {
+		color: #0e305d;
+		font-size: 45px;
+		line-height: 1.2em;
+		transform: scaleY(1);
+		transform-origin: bottom;
+		transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1) !important;
+		font-weight: 700;
+	}
+
+	&__description {
+		margin-top: 3rem;
+		color: $gray-color-1;
+	}
+
+	.button--1 {
+		margin-top: 3rem;
+	}
+}
+
+.component3 {
+	background: $background-color-1;
+	clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+	padding: 10rem;
+
+	&__heading {
+		color: $blue-color-1;
+		font-size: 4.5rem;
+		line-height: 1.2em;
+		font-weight: 700;
+	}
+
+	&__description {
+		font-size: 17px;
+		color: $gray-color-1;
+	}
+
+	&__sliders {
+		width: 70%;
+		margin-left: auto;
+		position: relative;
+		margin-top: 10rem;
+
+		&-text--1-container {
+			overflow: hidden;
+			width: 24rem;
+			position: absolute;
+			transform: translate(-50%, -50%);
+
+			ul {
+				display: flex;
+				width: 72rem;
+				li {
+					width: 100%;
+					color: $yellow-color-1;
+					font-size: 10rem;
+					font-weight: 700;
+					display: inline-block;
+					text-align: center;
+				}
+			}
+		}
+
+		&-text--2-container {
+			height: 17rem;
+			overflow: hidden;
+			position: absolute;
+			top: 25%;
+			left: -25%;
+			z-index: 1;
+
+			li {
+				width: 40rem;
+				min-height: 17rem;
+				display: flex;
+				align-items: center;
+
+				h3 {
+					color: #000;
+					font-size: 3rem;
+					font-weight: bold;
+					line-height: 1.2em;
+				}
+			}
+		}
+
+		&-images-container {
+			overflow: hidden;
+			// width: 60rem;
+		}
+
+		#component3__sliders-images {
+			width: 100%;
+			white-space: nowrap;
+			font-size: 0;
+			transform: translateX(0);
+			height: 32rem;
+			cursor: grab;
+		}
+
+		&-image {
+			width: 85%;
+			height: 100%;
+			display: inline-block;
+			background-size: cover;
+			background-position: center;
+			background-color: #cccccc;
+			margin-right: 5rem;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+}
+
+.component4 {
+	padding: 10rem 0;
+
+	&__header {
+		display: flex;
+		margin-bottom: 5rem;
+	}
+
+	&__heading {
+		font-size: 4.5rem;
+		color: $blue-color-1;
+		font-weight: 500;
+	}
+
+	&__rating-description {
+		font-size: 1.7rem;
+	}
+}
+
+.component5 {
+	&__heading {
+		color: $blue-color-1;
+		font-size: 4.5rem;
+		line-height: 1.2em;
+		font-weight: 700;
+		margin-bottom: 5rem;
+	}
+}

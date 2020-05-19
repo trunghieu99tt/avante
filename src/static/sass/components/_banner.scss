@@ -1,0 +1,53 @@
+.banner {
+	background-color: $blue-color-1;
+	color: #fff;
+	clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+	height: 80vh;
+	overflow: hidden;
+	z-index: 1;
+
+	.slider-container {
+		overflow: hidden;
+	}
+
+	#slides {
+		width: 100%;
+		white-space: nowrap;
+		font-size: 0;
+		transform: translateX(0);
+		height: 37rem;
+		cursor: grab;
+		position: relative;
+	}
+
+	#text-slide {
+		height: 2.5rem;
+		overflow: hidden;
+	}
+
+	.slide {
+		width: 90%;
+		height: 100%;
+		display: inline-block;
+		margin-right: 5rem;
+		position: relative;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			position: sticky;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	&__heading {
+		font-size: 5.5rem;
+	}
+
+	&__subheading {
+		font-size: 1.7rem;
+		line-height: 1.8;
+	}
+}
