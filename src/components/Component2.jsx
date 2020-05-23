@@ -82,7 +82,7 @@ export default class Component2 extends Component {
 									);
 								})}
 							</div>
-							<div className="col-md-4 component2__content-container">
+							<div className="col-md-5 component2__content-container">
 								<h3 className="component2__heading">
 									We are optimists who love to work together
 								</h3>

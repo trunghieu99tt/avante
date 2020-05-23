@@ -4,4 +4,48 @@
 	bottom: 0;
 	min-height: 80vh;
 	background: $blue-color-1;
+	padding: 5rem 0;
+	color: #fff;
+	display: flex;
+	align-items: center;
+
+	@include respond(tab-land) {
+		min-height: 500px;
+	}
+
+	&__name {
+		font-size: 45px;
+	}
+
+	&__description {
+		&--1 {
+			color: $yellow-color-1;
+			font-size: 18px;
+			font-weight: 600;
+		}
+
+		&--2 {
+			font-size: 16px;
+			color: $light-color-1;
+		}
+	}
+
+	&__section {
+		&-heading {
+			font-size: 2rem;
+			font-weight: 700;
+			margin: 2rem 0;
+		}
+
+		&-item {
+			font-size: 16px;
+			color: $light-color-1;
+		}
+	}
+
+	&__copyright {
+		font-size: 13px;
+		color: $light-color-1;
+		bottom: 0;
+	}
 }

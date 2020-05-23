@@ -69,7 +69,7 @@ export default class Component1 extends Component {
 				<section className={`component1 ${!isInView ? "hide" : ""}`}>
 					<div className="container">
 						<div className="row">
-							<div className="col-md-5 component1__text-container">
+							<div className="col-lg-5 component1__text-container">
 								<h1 className="component1__heading">
 									A view of the design universe
 								</h1>
@@ -89,7 +89,7 @@ export default class Component1 extends Component {
 									inventore reiciendis impedit?
 								</p>
 							</div>
-							<div className="col-md-7 component1__cards-container">
+							<div className="col-lg-7 component1__cards-container">
 								{[...Array(2)].map((_, index) => (
 									<Card1
 										key={Math.random()}

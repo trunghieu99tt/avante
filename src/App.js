@@ -9,6 +9,7 @@ import Component3 from "./components/Component3";
 import Component4 from "./components/Component4";
 import Component5 from "./components/Component5";
 import Footer from "./Layout/Footer";
+import Header from "./Layout/Header";
 import "./static/css/main.min.css";
 
 export default class App extends Component {
@@ -16,6 +17,7 @@ export default class App extends Component {
 		return (
 			<React.Fragment>
 				<section className="wrapper">
+					<Header />
 					<Banner />
 					<Component1 />
 					<Component2 />

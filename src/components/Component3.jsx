@@ -23,6 +23,18 @@ export default class Component3 extends Component {
 			"component3__sliders-image",
 			"vertical"
 		);
+
+		const container = document.querySelector(".component3__sliders");
+		if (container) {
+			container.addEventListener(
+				"dblclick",
+				(event) => {
+					event.preventDefault();
+					event.stopPropagation();
+				},
+				true
+			);
+		}
 	}
 
 	render() {

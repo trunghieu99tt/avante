@@ -83,7 +83,7 @@ const draggableSlider = (
 			pixelOffset =
 				currentSlide *
 				-(
-					(direction === "horizontal" &&
+					(direction === "horizontal" &&	
 						$(`.${sliderContainer}`).width()) ||
 					$(`.${sliderContainer}`).height()
 				);
