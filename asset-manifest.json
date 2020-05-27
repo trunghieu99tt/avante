@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/avante/static/css/main.60ee2475.chunk.css",
+    "main.js": "/avante/static/js/main.d59f1e1f.chunk.js",
+    "main.js.map": "/avante/static/js/main.d59f1e1f.chunk.js.map",
+    "runtime-main.js": "/avante/static/js/runtime-main.913eec4e.js",
+    "runtime-main.js.map": "/avante/static/js/runtime-main.913eec4e.js.map",
+    "static/css/2.a771ffcd.chunk.css": "/avante/static/css/2.a771ffcd.chunk.css",
+    "static/js/2.f36db327.chunk.js": "/avante/static/js/2.f36db327.chunk.js",
+    "static/js/2.f36db327.chunk.js.map": "/avante/static/js/2.f36db327.chunk.js.map",
+    "index.html": "/avante/index.html",
+    "precache-manifest.ac1d4dcadb9c4e97d65a7adc336462ef.js": "/avante/precache-manifest.ac1d4dcadb9c4e97d65a7adc336462ef.js",
+    "service-worker.js": "/avante/service-worker.js",
+    "static/css/2.a771ffcd.chunk.css.map": "/avante/static/css/2.a771ffcd.chunk.css.map",
+    "static/css/main.60ee2475.chunk.css.map": "/avante/static/css/main.60ee2475.chunk.css.map",
+    "static/js/2.f36db327.chunk.js.LICENSE.txt": "/avante/static/js/2.f36db327.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/avante/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.913eec4e.js",
+    "static/css/2.a771ffcd.chunk.css",
+    "static/js/2.f36db327.chunk.js",
+    "static/css/main.60ee2475.chunk.css",
+    "static/js/main.d59f1e1f.chunk.js"
+  ]
+}
