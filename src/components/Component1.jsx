@@ -7,18 +7,26 @@ import Card1 from "./Cards/Card1";
 export default class Component1 extends Component {
 	state = {
 		isInView: false,
+		isMobile: false,
 	};
 
 	componentDidMount() {
-		$(window).on("scroll", () => {
-			const { isInView } = this.state;
-			if (!isInView) {
-				if (isScrolledIntoView(".component1")) {
-					this.setState({ isInView: true });
-					this.animation();
+		const screenWidth = window.screen.width;
+
+		if (screenWidth <= 500) {
+			this.setState({ isInView: true });
+			this.animation();
+		} else {
+			$(window).on("scroll", () => {
+				const { isInView } = this.state;
+				if (!isInView) {
+					if (isScrolledIntoView(".component1")) {
+						this.setState({ isInView: true });
+						this.animation();
+					}
 				}
-			}
-		});
+			});
+		}
 	}
 
 	animation = () => {

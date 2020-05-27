@@ -3,6 +3,10 @@ import Card4 from "../components/Cards/Card4";
 import Card5 from "../components/Cards/Card5";
 
 export default class Header extends Component {
+	state = {
+		isOpeningMobileNav: false,
+	};
+
 	componentDidMount() {
 		window.addEventListener("scroll", () => {
 			const logo = document.querySelector(".logo");
@@ -19,7 +23,41 @@ export default class Header extends Component {
 		});
 	}
 
+	toggleMobileNav = () => {
+		const mobileNav = document.querySelector(
+			".navigation-mobile-container"
+		);
+		if (mobileNav) {
+			this.setState((prevState) => ({
+				isOpeningMobileNav: !prevState.isOpeningMobileNav,
+			}));
+			mobileNav.classList.toggle("active");
+		}
+	};
+
+	showSubItems = (idx) => {
+		const navigationSubItems = document.querySelectorAll(
+			".navigation-mobile-subItem"
+		);
+		navigationSubItems.forEach((item) => {
+			if (item && item.getAttribute("datamobile") == idx) {
+				item.classList.add("active");
+			} else item.classList.remove("active");
+		});
+	};
+
+	hideSubItems = (idx) => {
+		const navigationSubItems = document.querySelectorAll(
+			".navigation-mobile-subItem"
+		);
+		navigationSubItems.forEach(
+			(item) => item && item.classList && item.classList.remove("active")
+		);
+	};
+
 	render() {
+		const { isOpeningMobileNav } = this.state;
+
 		const data = [
 			{
 				name: "Home",
@@ -95,10 +133,50 @@ export default class Header extends Component {
 			});
 
 		const navigationMobile =
-			data && data.length > 0 && data.map((item) => {});
+			data &&
+			data.length > 0 &&
+			data.map((item, index) => {
+				return (
+					<li className="navigation-mobile-item">
+						<p
+							className="navigation-mobile-item__title"
+							onClick={() => this.showSubItems(index)}
+						>
+							{item.name}
+						</p>
+						{item && item.subMenu && (
+							<div
+								className="navigation-mobile-subItem"
+								datamobile={index}
+							>
+								<div
+									style={{
+										fontSize: "15px",
+									}}
+									onClick={() => this.hideSubItems(index)}
+								>
+									<i className={"fa fa-chevron-left"}></i>
+									Back
+								</div>
+								{[...Array(8)].map(() => {
+									return (
+										<p className="navigation-mobile-subItem__title">
+											Title
+										</p>
+									);
+								})}
+							</div>
+						)}
+					</li>
+				);
+			});
 
 		return (
 			<header className="header">
+				<div
+					className={`overlay ${isOpeningMobileNav ? "active" : ""}`}
+					onClick={this.toggleMobileNav}
+				></div>
 				<div className="container header__inner">
 					<section className="logo-container">
 						<img
@@ -108,8 +186,32 @@ export default class Header extends Component {
 						/>
 					</section>
 
+					<input
+						type="checkbox"
+						class="nav__checkbox"
+						name="checkbox"
+						id="toggle-nav"
+						className="toggle-nav"
+						style={{
+							display: "none",
+						}}
+					/>
+					<label
+						for="toggle-nav"
+						class="nav__toggle-btn"
+						onClick={this.toggleMobileNav}
+					>
+						<span class="nav__icon">&nbsp;</span>
+					</label>
+
 					<nav className="navigation-container">
 						<ul className="navigation">{navigation}</ul>
+					</nav>
+
+					<nav className="navigation-mobile-container">
+						<ul className="navigation-mobile">
+							{navigationMobile}
+						</ul>
 					</nav>
 				</div>
 			</header>

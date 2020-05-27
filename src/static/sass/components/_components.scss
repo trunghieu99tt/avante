@@ -87,6 +87,7 @@
 
 		@include respond(tab-port) {
 			min-height: 400px;
+			overflow: hidden;
 		}
 
 		> * {

@@ -25,6 +25,28 @@
 	width: 100px;
 }
 
+.navigation-mobile-container {
+	display: none;
+	transition: all 0.4s;
+	color: #000;
+	overflow: hidden;
+	@include respond(phone) {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 60%;
+		background: #fff;
+		min-height: 100vh;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+		transform: translateX(-100%);
+	}
+
+	&.active {
+		transform: translateX(0);
+	}
+}
+
 .navigation {
 	display: flex;
 	justify-content: flex-end;
@@ -36,6 +58,10 @@
 		flex: 1;
 		display: flex;
 		align-items: center;
+
+		@include respond(phone) {
+			display: none;
+		}
 	}
 
 	&-item {
@@ -101,5 +127,95 @@
 				transition: color 0.1s, transform 0.2s ease-out;
 			}
 		}
+	}
+
+	&-mobile {
+		padding: 5rem;
+
+		&-item {
+			&__title {
+				font-size: 20px;
+			}
+		}
+
+		&-subItem {
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			background: #fff;
+			padding: 5rem;
+			width: 100%;
+			transform: translateX(100%);
+			transition: all 0.4s;
+
+			&.active {
+				transform: translateX(0);
+			}
+
+			&__title {
+				font-size: 20px;
+				font-weight: 500px;
+			}
+		}
+	}
+}
+
+.nav__toggle-btn {
+	display: none;
+	@include respond(tab-port) {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #fff;
+		height: 40px;
+		width: 40px;
+		position: fixed;
+		border-radius: 50%;
+		top: 10px;
+		right: 10px;
+		z-index: 2000;
+		-webkit-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+		box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
+		text-align: center;
+		cursor: pointer;
+	}
+}
+
+.nav__icon {
+	position: relative;
+}
+
+.nav__icon,
+.nav__icon::before,
+.nav__icon::after {
+	width: 20px;
+	height: 2px;
+	background-color: #333;
+	display: inline-block;
+}
+
+.nav__icon::before,
+.nav__icon::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	transition: all 0.2s;
+}
+
+.nav__icon::before {
+	top: -8px;
+}
+
+.nav__icon::after {
+	top: 8px;
+}
+
+.overlay {
+	position: fixed;
+
+	&.active {
+		background: rgba($color: #fff, $alpha: 0.5);
+		height: 200vh;
+		width: 100%;
 	}
 }
